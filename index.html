@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payel's Vocal & Music Academy — Keyboard & Music Lessons</title>
-<meta name="description" content="Personalized keyboard and music lessons for beginners and learners of all levels. Online and offline classes with Payel.">
+<title>Payel's Vocal & Music Academy — Vocal & Keyboard Lessons</title>
+<meta name="description" content="Personalized vocal and keyboard lessons with Payel — Rabindra Sangeet, Nazrul Geeti, Bollywood, folk and more. Online and offline classes for all levels.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -75,6 +75,14 @@
     transition:background .2s ease, color .2s ease;
   }
   .nav-cta:hover{background:var(--ink);color:var(--ivory);}
+  .nav-actions{display:flex;align-items:center;gap:12px;}
+  .whatsapp-btn{
+    display:flex;align-items:center;gap:8px;
+    background:#25D366;color:#0b3d1f;
+    padding:9px 16px;border-radius:2px;font-size:0.88rem;font-weight:700;
+    transition:filter .2s ease;
+  }
+  .whatsapp-btn:hover{filter:brightness(1.08);}
   .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;}
   .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;}
 
@@ -339,6 +347,24 @@
   .who-card p{color:#4a3f33;font-size:0.95rem;}
   .who-card .num{font-family:'Fraunces',serif;font-style:italic;color:var(--brass);font-size:1.4rem;display:block;margin-bottom:14px;}
 
+  /* ---------- FOLLOW ---------- */
+  .follow{background:var(--ivory-dim);}
+  .follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);}
+  .follow-card{
+    background:var(--ivory);display:flex;align-items:center;gap:18px;
+    padding:30px 32px;transition:background .2s ease;
+  }
+  .follow-card:hover{background:var(--ivory-dim);}
+  .follow-icon{
+    width:52px;height:52px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;color:var(--ivory);
+  }
+  .follow-icon.yt{background:#c4302b;}
+  .follow-icon.ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
+  .follow-card h3{font-size:1.1rem;margin-bottom:4px;}
+  .follow-card p{color:#4a3f33;font-size:0.9rem;}
+  .follow-arrow{margin-left:auto;color:var(--brass);font-size:1.2rem;flex-shrink:0;}
+
   /* ---------- CTA / CONTACT ---------- */
   .cta{
     background:var(--velvet);color:var(--ivory);
@@ -350,6 +376,17 @@
   }
   .cta h2{color:var(--ivory);font-size:clamp(2rem,4vw,2.7rem);line-height:1.15;max-width:14ch;}
   .cta p{margin-top:18px;color:rgba(243,234,217,0.82);font-size:1.05rem;max-width:44ch;}
+  .direct-contact{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:28px;}
+  .contact-pill{
+    display:flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:2px;font-weight:700;font-size:0.92rem;
+    transition:filter .2s ease, transform .2s ease;
+  }
+  .contact-pill:hover{transform:translateY(-2px);}
+  .contact-pill.wa{background:#25D366;color:#0b3d1f;}
+  .contact-pill.call{background:transparent;border:1.5px solid rgba(243,234,217,0.4);color:var(--ivory);}
+  .contact-pill.call:hover{border-color:var(--ivory);}
+  .phone-number{font-family:'Fraunces',serif;font-style:italic;color:var(--ivory-dim);font-size:0.98rem;}
   .cta-box{
     background:rgba(243,234,217,0.06);
     border:1px solid rgba(243,234,217,0.22);
@@ -394,6 +431,8 @@
     .nav-links.open{max-height:320px;}
     .nav-links a{padding:16px 32px;border-top:1px solid var(--line-dark);}
     .nav-cta{display:none;}
+    .whatsapp-btn span.wa-label{display:none;}
+    .whatsapp-btn{padding:9px 11px;}
     .menu-btn{display:block;}
     .hero-inner{grid-template-columns:1fr;padding-top:56px;}
     .hero-art{order:-1;max-width:320px;margin:0 auto 12px;}
@@ -406,6 +445,7 @@
     .lesson-row p{grid-column:2;grid-row:2;}
     .format-grid{grid-template-columns:1fr;}
     .who-grid{grid-template-columns:1fr;}
+    .follow-grid{grid-template-columns:1fr;}
     .cta-inner{grid-template-columns:1fr;}
     .stat-row{flex-wrap:wrap;gap:24px;}
   }
@@ -425,7 +465,13 @@
       <a href="#format">Online &amp; Offline</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="nav-cta">Book a Trial Class</a>
+    <div class="nav-actions">
+      <a href="https://wa.me/916297058464" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Message Payel on WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.3c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.14 8.14 0 0 1 2.41 5.79c0 4.52-3.68 8.14-8.23 8.14Zm4.5-6.13c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
+        <span class="wa-label">WhatsApp</span>
+      </a>
+      <a href="#contact" class="nav-cta">Book a Trial Class</a>
+    </div>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -436,11 +482,11 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
-      <div class="eyebrow-line"><span class="rule"></span>Keyboard &amp; Music Lessons</div>
-      <h1>Find your sound at the <em>keyboard</em>, one lesson at a time.</h1>
-      <p class="sub">Personalized keyboard and music lessons for beginners and learners of every level — technique, fundamentals, songs, and rhythm, taught by Payel. Learn from home or in person, at a pace built around you.</p>
+      <div class="eyebrow-line"><span class="rule"></span>Vocal &amp; Keyboard Lessons</div>
+      <h1>Find your <em>voice</em> and your sound, one lesson at a time.</h1>
+      <p class="sub">Personalized vocal and keyboard lessons with Payel — Rabindra Sangeet, Nazrul Geeti, Bollywood, folk, and everything in between, alongside technique, fundamentals, and rhythm. Learn from home or in person, at a pace built around you.</p>
       <div class="skill-pills">
-        <span>Keyboard</span><span>Music Theory</span><span>Songs &amp; Repertoire</span><span>Rhythm</span>
+        <span>Vocals</span><span>Keyboard</span><span>Rabindra Sangeet</span><span>Nazrul Geeti</span><span>Bollywood</span><span>Folk</span>
       </div>
       <div class="hero-ctas">
         <a href="#contact" class="btn-solid">Book a Trial Class</a>
@@ -505,20 +551,20 @@
 <section class="about" id="about">
   <div class="wrap about-grid">
     <div class="portrait">
-      <img src="assets/payel-profile.jpg" alt="Payel, keyboard and music teacher" loading="lazy">
+      <img src="assets/payel-profile.jpg" alt="Payel, vocal and keyboard teacher" loading="lazy">
     </div>
     <div>
       <div class="section-head" style="margin-bottom:0;">
         <span class="kicker">About your teacher</span>
-        <h2>Hi, I'm Payel — musician and keyboard teacher.</h2>
+        <h2>Hi, I'm Payel — musician, vocalist &amp; keyboard teacher.</h2>
       </div>
       <div class="about-copy" style="margin-top:28px;">
-        <p>I teach keyboard and music the way I wish I'd been taught: patiently, practically, and built around what you actually want to play. Whether you're picking up a keyboard for the very first time or coming back to sharpen skills you already have, lessons start from where you are — not from a rigid syllabus.</p>
-        <p>My approach blends solid fundamentals — reading music, understanding rhythm, training your ear — with the songs and styles that made you want to learn in the first place. You'll build real, practical playing skills you can use, not just exercises you'll forget.</p>
+        <p>I teach voice and keyboard the way I wish I'd been taught: patiently, practically, and built around what you actually want to sing or play. My own singing spans Rabindra Sangeet, Nazrul Geeti, Bollywood, and folk — and I bring that same range into lessons, whatever style pulls you in.</p>
+        <p>Whether you're picking up a keyboard for the first time, training your voice from scratch, or coming back to sharpen skills you already have, lessons start from where you are — not from a rigid syllabus. We'll blend real fundamentals — ear training, rhythm, reading music — with the songs that made you want to learn in the first place.</p>
       </div>
       <div class="stat-row">
-        <div class="stat"><h3>Patient</h3><span>Teaching style</span></div>
-        <div class="stat"><h3>Practical</h3><span>Skills you'll actually use</span></div>
+        <div class="stat"><h3>Vocals</h3><span>Rabindra Sangeet, Nazrul Geeti, Bollywood, folk</span></div>
+        <div class="stat"><h3>Keyboard</h3><span>Technique to performance</span></div>
         <div class="stat"><h3>Personal</h3><span>Lessons built around you</span></div>
       </div>
     </div>
@@ -529,10 +575,15 @@
   <div class="wrap">
     <div class="section-head">
       <span class="kicker">What you'll learn</span>
-      <h2>Everything you need to actually play — not just theory.</h2>
-      <p>Each lesson plan is personalized, but here's the ground every student covers on the way to playing confidently.</p>
+      <h2>Everything you need to actually sing and play — not just theory.</h2>
+      <p>Each lesson plan is personalized, but here's the ground every student covers on the way to performing confidently.</p>
     </div>
     <div class="lesson-list">
+      <div class="lesson-row">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.4"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M9 21h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <h3>Vocal Training</h3>
+        <p>Breath control, pitch, and tone across the styles you love — Rabindra Sangeet, Nazrul Geeti, Bollywood, and folk — built on solid classical fundamentals.</p>
+      </div>
       <div class="lesson-row">
         <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="10" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M6 6v10M9 6v6M12 6v10M15 6v6M18 6v10" stroke="currentColor" stroke-width="1.4"/></svg>
         <h3>Keyboard Technique</h3>
@@ -546,17 +597,17 @@
       <div class="lesson-row">
         <svg viewBox="0 0 24 24" fill="none"><path d="M9 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM9 15V4l10-1v11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="13" r="3" stroke="currentColor" stroke-width="1.4"/></svg>
         <h3>Songs &amp; Repertoire</h3>
-        <p>Learn pieces you actually want to play — chosen with you, not assigned to you — so practice stays motivating from your very first weeks.</p>
+        <p>Learn pieces you actually want to sing or play — chosen with you, not assigned to you — so practice stays motivating from your very first weeks.</p>
       </div>
       <div class="lesson-row">
         <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h3l2-7 3 14 3-10 2 3h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Rhythm &amp; Timing</h3>
-        <p>Steady tempo, clapping and counting exercises, and playing along with a metronome until timing becomes second nature instead of a constant struggle.</p>
+        <p>Steady tempo, clapping and counting exercises, and singing or playing along with a metronome until timing becomes second nature.</p>
       </div>
       <div class="lesson-row">
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 7l4-4 4 4M6 21h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3>Practical Playing Skills</h3>
-        <p>Sight-reading new pieces, playing by ear, improvising simple accompaniments — the real-world skills that turn a student into a musician.</p>
+        <h3>Practical Performance Skills</h3>
+        <p>Sight-reading, playing or singing by ear, and simple improvisation — the real-world skills that turn a student into a performer.</p>
       </div>
     </div>
   </div>
@@ -604,17 +655,48 @@
     <div class="who-card">
       <span class="num">First-timers</span>
       <h3>Complete beginners</h3>
-      <p>Never touched a keyboard before? Lessons start with the absolute basics — no prior musical knowledge needed.</p>
+      <p>Never sung or touched a keyboard before? Lessons start with the absolute basics — no prior musical knowledge needed.</p>
     </div>
     <div class="who-card">
       <span class="num">Returners</span>
       <h3>Rebuilding old skills</h3>
-      <p>Played years ago and want it back? We'll rebuild your technique and get you sight-reading again quickly.</p>
+      <p>Sang or played years ago and want it back? We'll rebuild your technique and get you performing again quickly.</p>
     </div>
     <div class="who-card">
       <span class="num">Advancing</span>
       <h3>Intermediate &amp; beyond</h3>
-      <p>Already playing? Sharpen technique, tackle harder repertoire, and work on improvisation and performance skills.</p>
+      <p>Already singing or playing? Sharpen technique, tackle harder repertoire, and work on improvisation and performance skills.</p>
+    </div>
+  </div>
+</section>
+
+<section class="follow">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px;">
+      <span class="kicker">Hear it for yourself</span>
+      <h2>Watch and follow along outside of lessons.</h2>
+    </div>
+    <div class="follow-grid">
+      <a href="https://www.youtube.com/@PayelMukherjee" target="_blank" rel="noopener" class="follow-card">
+        <div class="follow-icon yt">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>
+        </div>
+        <div>
+          <h3>YouTube</h3>
+          <p>Performance videos, covers, and lesson snippets</p>
+        </div>
+        <span class="follow-arrow">↗</span>
+      </a>
+      <a href="https://www.instagram.com/payel.mukherjee.official/" target="_blank" rel="noopener" class="follow-card">
+        <div class="follow-icon ig">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h3>Instagram</h3>
+          <p>Behind the scenes, reels, and student moments</p>
+        </div>
+        <span class="follow-arrow">↗</span>
+      </a>
     </div>
   </div>
 </section>
@@ -622,8 +704,19 @@
 <section class="cta" id="contact">
   <div class="cta-inner">
     <div>
-      <h2>Ready to start playing?</h2>
+      <h2>Ready to start singing or playing?</h2>
       <p>Tell me a little about yourself and your goals, and I'll get back to you to set up a trial class — online or in person.</p>
+      <div class="direct-contact">
+        <a href="https://wa.me/916297058464" target="_blank" rel="noopener" class="contact-pill wa">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.3c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.14 8.14 0 0 1 2.41 5.79c0 4.52-3.68 8.14-8.23 8.14Zm4.5-6.13c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:+916297058464" class="contact-pill call">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Call
+        </a>
+        <span class="phone-number">062970 58464</span>
+      </div>
     </div>
     <form class="cta-box" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — talk soon!';">
       <div class="field">
@@ -644,7 +737,7 @@
       </div>
       <div class="field">
         <label for="msg">A bit about your goals</label>
-        <textarea id="msg" rows="3" placeholder="Beginner, returning player, songs you want to learn..."></textarea>
+        <textarea id="msg" rows="3" placeholder="Beginner, returning student, songs or styles you want to learn..."></textarea>
       </div>
       <button type="submit">Request a Trial Class</button>
       <p class="form-note">This form is a preview — connect it to email or a form service to start receiving messages.</p>
@@ -656,14 +749,16 @@
   <div class="wrap">
     <div class="footer-top" style="margin-bottom:32px;">
       <div class="footer-brand">Payel's Vocal &amp; Music Academy</div>
-      <p class="footer-note">Personalized keyboard and music lessons for learners of all levels. Online and offline classes available.</p>
+      <p class="footer-note">Personalized vocal and keyboard lessons — Rabindra Sangeet, Nazrul Geeti, Bollywood, folk and more. Online and offline classes available.</p>
     </div>
     <div class="footer-inner">
       <span style="font-size:0.85rem;">© 2026 Payel's Vocal &amp; Music Academy</span>
       <div class="footer-links">
         <a href="#lessons">Lessons</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="https://wa.me/916297058464" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.youtube.com/@PayelMukherjee" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/payel.mukherjee.official/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
