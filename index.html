@@ -175,6 +175,50 @@
     50%{opacity:1;transform:scale(1.08);}
   }
 
+  /* ---------- HERO VIDEO BADGE ---------- */
+  .hero-video-badge{
+    position:absolute;z-index:4;top:28px;right:32px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .video-circle{
+    position:relative;width:132px;height:132px;border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 18px 40px -12px rgba(0,0,0,0.6), 0 0 0 4px var(--ink), 0 0 0 5px rgba(219,166,72,0.5);
+  }
+  .video-circle video{
+    width:100%;height:100%;object-fit:cover;object-position:center 30%;
+    display:block;
+  }
+  .video-ring{
+    position:absolute;top:-6px;left:50%;translate:-50% 0;
+    width:144px;height:144px;border-radius:50%;
+    border:1.5px dashed rgba(219,166,72,0.55);
+    animation:spin-ring 18s linear infinite;
+  }
+  @keyframes spin-ring{to{transform:rotate(360deg);}}
+  .sound-toggle{
+    position:absolute;bottom:6px;right:2px;z-index:5;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--ink);border:1.5px solid var(--brass-bright);color:var(--brass-bright);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:background .2s ease;
+  }
+  .sound-toggle:hover{background:var(--velvet);}
+  .video-caption{
+    font-size:0.72rem;letter-spacing:0.02em;color:var(--ivory-dim);
+    background:rgba(27,23,18,0.55);padding:4px 12px;border-radius:20px;
+    backdrop-filter:blur(4px);white-space:nowrap;
+  }
+  @media (max-width: 880px){
+    .hero-video-badge{top:16px;right:16px;}
+    .video-circle{width:88px;height:88px;}
+    .video-ring{width:98px;height:98px;}
+    .video-caption{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .video-ring{animation:none;}
+  }
+
   /* ---------- HERO MOTION: floating notes ---------- */
   .notes-field{
     position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;
@@ -480,6 +524,19 @@
 
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="hero-video-badge">
+    <div class="video-ring"></div>
+    <div class="video-circle">
+      <video id="heroVideo" src="assets/hero-video.mp4" poster="assets/video-poster.jpg" autoplay muted loop playsinline></video>
+    </div>
+    <button class="sound-toggle" id="soundToggle" aria-label="Unmute video">
+      <svg id="soundIconOff" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Zm-2.5-8.9v2.06A7 7 0 0 1 19 12a7 7 0 0 1-5 6.84v2.06A9 9 0 0 0 21 12a9 9 0 0 0-7-8.9Z"/></svg>
+      <svg id="soundIconOn" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3Z"/><path d="m19 9-4.5 4.5M14.5 9 19 13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <span class="video-caption">Watch Payel perform</span>
+  </div>
+
   <div class="hero-inner">
     <div>
       <div class="eyebrow-line"><span class="rule"></span>Vocal &amp; Keyboard Lessons</div>
@@ -775,6 +832,20 @@
     navLinks.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', false);
   }));
+
+  const heroVideo = document.getElementById('heroVideo');
+  const soundToggle = document.getElementById('soundToggle');
+  const iconOff = document.getElementById('soundIconOff');
+  const iconOn = document.getElementById('soundIconOn');
+  if (heroVideo && soundToggle) {
+    soundToggle.addEventListener('click', () => {
+      heroVideo.muted = !heroVideo.muted;
+      const muted = heroVideo.muted;
+      iconOff.style.display = muted ? 'block' : 'none';
+      iconOn.style.display = muted ? 'none' : 'block';
+      soundToggle.setAttribute('aria-label', muted ? 'Unmute video' : 'Mute video');
+    });
+  }
 </script>
 
 </body>
