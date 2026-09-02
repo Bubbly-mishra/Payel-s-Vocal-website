@@ -86,7 +86,7 @@
     min-height:calc(100svh - 76px);
     display:flex;
     align-items:center;
-    background:radial-gradient(120% 100% at 78% 30%, #3a1a26 0%, var(--ink) 55%), var(--ink);
+    background:var(--ink);
   }
   .hero-inner{
     position:relative;z-index:3;
@@ -102,7 +102,8 @@
     font-size:clamp(2.3rem, 4.6vw, 3.5rem);
     line-height:1.06;
     max-width:12ch;
-    opacity:0;
+    color:var(--ivory);
+    text-shadow:0 2px 20px rgba(0,0,0,0.45);
     transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.15s forwards;
   }
@@ -112,13 +113,12 @@
   .hero .sub{
     margin-top:20px;font-size:1.04rem;color:var(--ivory-dim);
     max-width:44ch;
-    opacity:0;
     transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.32s forwards;
   }
   .skill-pills{
     display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;
-    opacity:0;transform:translateY(16px);
+    transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.42s forwards;
   }
   .skill-pills span{
@@ -127,11 +127,10 @@
   }
   .hero-ctas{
     margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;
-    opacity:0;
     transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.52s forwards;
   }
-  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  @keyframes rise{0%{opacity:0.001;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
   .btn-solid{
     background:var(--brass);color:var(--ink);
     padding:14px 26px;border-radius:2px;font-weight:700;font-size:0.95rem;
@@ -148,7 +147,7 @@
   .hero-stats{
     display:flex;gap:32px;margin-top:34px;padding-top:24px;
     border-top:1px solid var(--line);
-    opacity:0;transform:translateY(16px);
+    transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.64s forwards;
   }
   .hero-stats div h3{font-size:1.5rem;color:var(--brass-bright);font-family:'Fraunces',serif;}
@@ -159,8 +158,8 @@
   /* ---------- HERO MOTION: ambient glow ---------- */
   .hero-glow{
     position:absolute;z-index:1;pointer-events:none;
-    top:10%;right:-5%;width:60%;aspect-ratio:1/1;
-    background:radial-gradient(circle, rgba(219,166,72,0.22) 0%, rgba(219,166,72,0) 68%);
+    top:8%;right:-8%;width:52%;aspect-ratio:1/1;
+    background:radial-gradient(circle, rgba(219,166,72,0.16) 0%, rgba(219,166,72,0) 65%);
     animation:pulse-glow 6s ease-in-out infinite;
   }
   @keyframes pulse-glow{
