@@ -7,7 +7,7 @@
 <meta name="description" content="Personalized vocal and keyboard lessons with Payel — Rabindra Sangeet, Nazrul Geeti, Bollywood, folk and more. Online and offline classes for all levels.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1b1712;
@@ -40,6 +40,7 @@
     letter-spacing:-0.01em;
   }
   p{margin:0;}
+  .bn{font-family:'Noto Sans Bengali', 'Archivo', sans-serif;}
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
@@ -107,10 +108,11 @@
   }
   .eyebrow-line .rule{width:34px;height:1px;background:var(--brass-bright);}
   .hero h1{
-    font-size:clamp(2.3rem, 4.6vw, 3.5rem);
-    line-height:1.06;
-    max-width:12ch;
+    font-size:clamp(2.1rem, 4.6vw, 3.3rem);
+    line-height:1.08;
+    max-width:15ch;
     color:var(--ivory);
+    font-weight:700;
     text-shadow:0 2px 20px rgba(0,0,0,0.45);
     transform:translateY(16px);
     animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.15s forwards;
@@ -118,25 +120,39 @@
   .hero h1 em{
     font-style:italic;color:var(--brass-bright);
   }
+  .hero-tagline{
+    margin-top:16px;font-family:'Fraunces',serif;font-style:italic;
+    font-size:clamp(1.15rem, 2vw, 1.45rem);color:var(--brass-bright);
+    max-width:26ch;
+    transform:translateY(16px);
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.26s forwards;
+  }
+  .hero-tagline em{font-style:italic;color:var(--ivory);}
+  .hero-tagline-bn{
+    margin-top:12px;font-size:1.02rem;line-height:1.7;color:var(--ivory-dim);
+    max-width:36ch;
+    transform:translateY(16px);
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.36s forwards;
+  }
   .hero .sub{
-    margin-top:20px;font-size:1.04rem;color:var(--ivory-dim);
+    margin-top:18px;font-size:0.98rem;color:var(--ivory-dim);
     max-width:44ch;
     transform:translateY(16px);
-    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.32s forwards;
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.46s forwards;
   }
   .skill-pills{
-    display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;
     transform:translateY(16px);
-    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.42s forwards;
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.56s forwards;
   }
   .skill-pills span{
     font-size:0.82rem;padding:6px 14px;border-radius:20px;
     border:1px solid rgba(243,234,217,0.28);color:var(--ivory-dim);
   }
   .hero-ctas{
-    margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;
+    margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;
     transform:translateY(16px);
-    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.52s forwards;
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.66s forwards;
   }
   @keyframes rise{0%{opacity:0.001;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
   .btn-solid{
@@ -153,10 +169,10 @@
   .btn-ghost:hover{border-color:var(--ivory);background:rgba(243,234,217,0.06);}
 
   .hero-stats{
-    display:flex;gap:32px;margin-top:34px;padding-top:24px;
+    display:flex;gap:32px;margin-top:26px;padding-top:20px;
     border-top:1px solid var(--line);
     transform:translateY(16px);
-    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.64s forwards;
+    animation:rise .8s cubic-bezier(.22,.8,.32,1) 0.78s forwards;
   }
   .hero-stats div h3{font-size:1.5rem;color:var(--brass-bright);font-family:'Fraunces',serif;}
   .hero-stats div span{display:block;font-size:0.8rem;color:var(--ivory-dim);margin-top:2px;}
@@ -315,7 +331,7 @@
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   @media (prefers-reduced-motion: reduce){
     .staff-strip .track{animation:none;}
-    .hero h1,.hero .sub,.hero-ctas{animation:none;opacity:1;transform:none;}
+    .hero h1,.hero-tagline,.hero-tagline-bn,.hero .sub,.skill-pills,.hero-ctas,.hero-stats{animation:none;opacity:1;transform:none;}
   }
 
   /* ---------- SECTION SHARED ---------- */
@@ -340,6 +356,10 @@
   .portrait img{width:100%;height:100%;object-fit:contain;object-position:center;}
   .about-copy p{color:#3a3025;font-size:1.05rem;margin-bottom:18px;}
   .about-copy p:last-child{margin-bottom:0;}
+  .about-copy .bio-bn{
+    font-style:italic;color:var(--velvet);font-size:1.05rem;line-height:1.75;
+    padding-top:16px;margin-top:6px;border-top:1px solid var(--line-dark);
+  }
   .stat-row{
     display:flex;gap:40px;margin-top:36px;padding-top:32px;
     border-top:1px solid var(--line-dark);
@@ -390,6 +410,43 @@
   .who-card h3{font-size:1.1rem;margin-bottom:10px;}
   .who-card p{color:#4a3f33;font-size:0.95rem;}
   .who-card .num{font-family:'Fraunces',serif;font-style:italic;color:var(--brass);font-size:1.4rem;display:block;margin-bottom:14px;}
+
+  /* ---------- LISTEN (round YouTube players) ---------- */
+  .listen{background:var(--ink);color:var(--ivory);}
+  .listen .section-head .kicker{color:var(--brass-bright);}
+  .listen .section-head h2{color:var(--ivory);}
+  .listen .section-head p{color:var(--ivory-dim);margin-top:14px;}
+  .listen-grid{
+    display:flex;flex-wrap:wrap;gap:48px;justify-content:flex-start;
+  }
+  .listen-item{display:flex;flex-direction:column;align-items:center;gap:14px;width:190px;}
+  .yt-circle{
+    position:relative;width:190px;height:190px;border-radius:50%;
+    overflow:hidden;background:#000;
+    box-shadow:0 20px 45px -14px rgba(0,0,0,0.6), 0 0 0 5px var(--ink), 0 0 0 6px rgba(219,166,72,0.5);
+  }
+  .yt-player{position:absolute;inset:0;}
+  .yt-player iframe{
+    position:absolute;top:50%;left:50%;
+    width:205%;height:115%;
+    transform:translate(-50%,-50%);
+    border:0;pointer-events:none;
+  }
+  .yt-toggle{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:56px;height:56px;border-radius:50%;z-index:2;
+    background:rgba(27,23,18,0.55);border:2px solid var(--brass-bright);color:var(--ivory);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    backdrop-filter:blur(2px);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .yt-toggle:hover{background:var(--velvet);transform:translate(-50%,-50%) scale(1.08);}
+  .listen-label{font-size:0.9rem;color:var(--ivory-dim);text-align:center;}
+  @media (max-width: 640px){
+    .listen-grid{gap:28px;justify-content:center;}
+    .listen-item{width:150px;}
+    .yt-circle{width:150px;height:150px;}
+  }
 
   /* ---------- FOLLOW ---------- */
   .follow{background:var(--ivory-dim);}
@@ -540,8 +597,10 @@
   <div class="hero-inner">
     <div>
       <div class="eyebrow-line"><span class="rule"></span>Vocal &amp; Keyboard Lessons</div>
-      <h1>Find your <em>voice</em> and your sound, one lesson at a time.</h1>
-      <p class="sub">Personalized vocal and keyboard lessons with Payel — Rabindra Sangeet, Nazrul Geeti, Bollywood, folk, and everything in between, alongside technique, fundamentals, and rhythm. Learn from home or in person, at a pace built around you.</p>
+      <h1>Payel's Vocal &amp; Music Academy</h1>
+      <p class="hero-tagline">Find your <em>voice</em> and your sound, one lesson at a time.</p>
+      <p class="hero-tagline-bn bn">সুরের সাধনায় বলিউড, রবীন্দ্রসঙ্গীত, নজরুলগীতি, লোকসঙ্গীতসহ বিভিন্ন বাংলা গান শেখানো হয় যত্ন ও ভালোবাসার সঙ্গে।</p>
+      <p class="sub">Personalized lessons in Bollywood, Rabindra Sangeet, Nazrul Geeti, Bengali folk, and keyboard — online or in person, at a pace built around you.</p>
       <div class="skill-pills">
         <span>Vocals</span><span>Keyboard</span><span>Rabindra Sangeet</span><span>Nazrul Geeti</span><span>Bollywood</span><span>Folk</span>
       </div>
@@ -616,8 +675,10 @@
         <h2>Hi, I'm Payel — musician, vocalist &amp; keyboard teacher.</h2>
       </div>
       <div class="about-copy" style="margin-top:28px;">
-        <p>I teach voice and keyboard the way I wish I'd been taught: patiently, practically, and built around what you actually want to sing or play. My own singing spans Rabindra Sangeet, Nazrul Geeti, Bollywood, and folk — and I bring that same range into lessons, whatever style pulls you in.</p>
-        <p>Whether you're picking up a keyboard for the first time, training your voice from scratch, or coming back to sharpen skills you already have, lessons start from where you are — not from a rigid syllabus. We'll blend real fundamentals — ear training, rhythm, reading music — with the songs that made you want to learn in the first place.</p>
+        <p>A passionate and experienced singer and vocal music teacher specializing in a wide range of Indian music traditions. She teaches Bollywood songs, Rabindra Sangeet, Nazrul Geeti, Bengali folk music, and various other Bengali songs, helping students develop both their vocal skills and their understanding of the music.</p>
+        <p>Her teaching focuses on voice training, sur (pitch), taal (rhythm), pronunciation, expression, and confidence, making the learning process enjoyable and accessible for beginners as well as experienced singers.</p>
+        <p>Whether you want to learn Bollywood melodies, explore the richness of Bengali music, or develop a strong foundation in singing, her personalized guidance can help you become a more confident and expressive vocalist.</p>
+        <p class="bn bio-bn">সুরের সাধনায় বলিউড, রবীন্দ্রসঙ্গীত, নজরুলগীতি, লোকসঙ্গীতসহ বিভিন্ন বাংলা গান শেখানো হয় যত্ন ও ভালোবাসার সঙ্গে।</p>
       </div>
       <div class="stat-row">
         <div class="stat"><h3>Vocals</h3><span>Rabindra Sangeet, Nazrul Geeti, Bollywood, folk</span></div>
@@ -723,6 +784,48 @@
       <span class="num">Advancing</span>
       <h3>Intermediate &amp; beyond</h3>
       <p>Already singing or playing? Sharpen technique, tackle harder repertoire, and work on improvisation and performance skills.</p>
+    </div>
+  </div>
+</section>
+
+<section class="listen">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:44px;">
+      <span class="kicker">শুনুন / Listen</span>
+      <h2>A few performances, straight from the stage.</h2>
+      <p>Tap a circle to play. Tap again to pause.</p>
+    </div>
+    <div class="listen-grid">
+      <div class="listen-item">
+        <div class="yt-circle">
+          <div class="yt-player" id="ytplayer1" data-video-id="qQVRNEN89YU"></div>
+          <button class="yt-toggle" data-player="ytplayer1" aria-label="Play video">
+            <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+            <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+        </div>
+        <p class="listen-label">Live Performance I</p>
+      </div>
+      <div class="listen-item">
+        <div class="yt-circle">
+          <div class="yt-player" id="ytplayer2" data-video-id="GVVKnH8yvqc"></div>
+          <button class="yt-toggle" data-player="ytplayer2" aria-label="Play video">
+            <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+            <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+        </div>
+        <p class="listen-label">Live Performance II</p>
+      </div>
+      <div class="listen-item">
+        <div class="yt-circle">
+          <div class="yt-player" id="ytplayer3" data-video-id="KUQ4jS7aUqg"></div>
+          <button class="yt-toggle" data-player="ytplayer3" aria-label="Play video">
+            <svg class="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7L8 5Z"/></svg>
+            <svg class="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+        </div>
+        <p class="listen-label">Live Performance III</p>
+      </div>
     </div>
   </div>
 </section>
@@ -846,6 +949,61 @@
       soundToggle.setAttribute('aria-label', muted ? 'Unmute video' : 'Mute video');
     });
   }
+
+  /* ---- Round YouTube players (custom play/pause) ---- */
+  const ytPlayers = {};
+  function onYouTubeIframeAPIReady() {
+    document.querySelectorAll('.yt-player').forEach((el) => {
+      const id = el.id;
+      const videoId = el.dataset.videoId;
+      ytPlayers[id] = new YT.Player(id, {
+        videoId: videoId,
+        playerVars: {
+          controls: 0, disablekb: 1, modestbranding: 1, rel: 0,
+          iv_load_policy: 3, fs: 0, playsinline: 1
+        },
+        events: {
+          onStateChange: (e) => onPlayerStateChange(id, e)
+        }
+      });
+    });
+  }
+  function onPlayerStateChange(id, e) {
+    const btn = document.querySelector(`.yt-toggle[data-player="${id}"]`);
+    if (!btn) return;
+    const playIcon = btn.querySelector('.icon-play');
+    const pauseIcon = btn.querySelector('.icon-pause');
+    if (e.data === YT.PlayerState.PLAYING) {
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+      btn.setAttribute('aria-label', 'Pause video');
+    } else {
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+      btn.setAttribute('aria-label', 'Play video');
+    }
+  }
+  document.querySelectorAll('.yt-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.player;
+      const player = ytPlayers[id];
+      if (!player || typeof player.getPlayerState !== 'function') return;
+      const state = player.getPlayerState();
+      Object.keys(ytPlayers).forEach((otherId) => {
+        if (otherId !== id && typeof ytPlayers[otherId].pauseVideo === 'function') {
+          ytPlayers[otherId].pauseVideo();
+        }
+      });
+      if (state === YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+    });
+  });
+  const ytApiTag = document.createElement('script');
+  ytApiTag.src = 'https://www.youtube.com/iframe_api';
+  document.body.appendChild(ytApiTag);
 </script>
 
 </body>
