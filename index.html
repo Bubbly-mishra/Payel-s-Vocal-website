@@ -356,22 +356,30 @@
   }
 
   /* ---------- FOLLOW ---------- */
-  .follow{background:var(--ivory-dim);}
-  .follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);}
+  .follow{
+    position:relative;overflow:hidden;color:var(--ivory);
+    background:
+      linear-gradient(180deg, rgba(27,23,18,0.82) 0%, rgba(58,17,33,0.72) 55%, rgba(64,19,37,0.6) 100%),
+      url('assets/payel-perform-bg-2.jpg') center 35% / cover no-repeat;
+  }
+  .follow .section-head h2{color:var(--ivory);}
+  .follow .section-head .kicker{color:var(--brass-bright);}
+  .follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(243,234,217,0.15);border:1px solid rgba(243,234,217,0.15);}
   .follow-card{
-    background:var(--ivory);display:flex;align-items:center;gap:18px;
+    background:rgba(27,23,18,0.55);backdrop-filter:blur(3px);
+    display:flex;align-items:center;gap:18px;
     padding:30px 32px;transition:background .2s ease;
   }
-  .follow-card:hover{background:var(--ivory-dim);}
+  .follow-card:hover{background:rgba(27,23,18,0.72);}
   .follow-icon{
     width:52px;height:52px;border-radius:50%;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;color:var(--ivory);
   }
   .follow-icon.yt{background:#c4302b;}
   .follow-icon.ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
-  .follow-card h3{font-size:1.1rem;margin-bottom:4px;}
-  .follow-card p{color:#4a3f33;font-size:0.9rem;}
-  .follow-arrow{margin-left:auto;color:var(--brass);font-size:1.2rem;flex-shrink:0;}
+  .follow-card h3{font-size:1.1rem;margin-bottom:4px;color:var(--ivory);}
+  .follow-card p{color:var(--ivory-dim);font-size:0.9rem;}
+  .follow-arrow{margin-left:auto;color:var(--brass-bright);font-size:1.2rem;flex-shrink:0;}
 
   /* ---------- PERFORM (booking) ---------- */
   .perform{
@@ -716,6 +724,30 @@
   </div>
 </section>
 
+<section class="perform">
+  <div class="perform-glow" aria-hidden="true"></div>
+  <div class="stage-beams" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="perform-notes" aria-hidden="true">
+    <span class="note" style="left:8%;font-size:20px;animation-duration:10s;animation-delay:-2s;">♪</span>
+    <span class="note" style="left:22%;font-size:15px;animation-duration:12s;animation-delay:-6s;">♫</span>
+    <span class="note" style="left:78%;font-size:18px;animation-duration:9s;animation-delay:-4s;">♬</span>
+    <span class="note" style="left:90%;font-size:14px;animation-duration:11s;animation-delay:-1s;">♩</span>
+  </div>
+  <div class="wrap perform-inner">
+    <div class="perform-copy">
+      <span class="kicker">✦ Also available for events ✦</span>
+      <h2>Book Payel for a live performance.</h2>
+      <p>Beyond teaching, Payel performs live — Bollywood favourites, Rabindra Sangeet, Nazrul Geeti, Bengali folk, and more. Available for functions, celebrations, and cultural events.</p>
+      <a href="https://wa.me/916297058464" target="_blank" rel="noopener" class="contact-pill wa perform-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.3c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.14 8.14 0 0 1 2.41 5.79c0 4.52-3.68 8.14-8.23 8.14Zm4.5-6.13c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
+        Enquire on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="follow">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:40px;">
@@ -742,30 +774,6 @@
           <p>Behind the scenes, reels, and student moments</p>
         </div>
         <span class="follow-arrow">↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="perform">
-  <div class="perform-glow" aria-hidden="true"></div>
-  <div class="stage-beams" aria-hidden="true">
-    <span></span><span></span><span></span><span></span>
-  </div>
-  <div class="perform-notes" aria-hidden="true">
-    <span class="note" style="left:8%;font-size:20px;animation-duration:10s;animation-delay:-2s;">♪</span>
-    <span class="note" style="left:22%;font-size:15px;animation-duration:12s;animation-delay:-6s;">♫</span>
-    <span class="note" style="left:78%;font-size:18px;animation-duration:9s;animation-delay:-4s;">♬</span>
-    <span class="note" style="left:90%;font-size:14px;animation-duration:11s;animation-delay:-1s;">♩</span>
-  </div>
-  <div class="wrap perform-inner">
-    <div class="perform-copy">
-      <span class="kicker">✦ Also available for events ✦</span>
-      <h2>Book Payel for a live performance.</h2>
-      <p>Beyond teaching, Payel performs live — Bollywood favourites, Rabindra Sangeet, Nazrul Geeti, Bengali folk, and more. Available for functions, celebrations, and cultural events.</p>
-      <a href="https://wa.me/916297058464" target="_blank" rel="noopener" class="contact-pill wa perform-btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.85 9.85 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.3c0-4.52 3.68-8.2 8.24-8.2 2.2 0 4.27.86 5.82 2.42a8.14 8.14 0 0 1 2.41 5.79c0 4.52-3.68 8.14-8.23 8.14Zm4.5-6.13c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.39-1.73-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.3-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
-        Enquire on WhatsApp
       </a>
     </div>
   </div>
