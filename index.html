@@ -356,30 +356,22 @@
   }
 
   /* ---------- FOLLOW ---------- */
-  .follow{
-    position:relative;overflow:hidden;color:var(--ivory);
-    background:
-      linear-gradient(180deg, rgba(27,23,18,0.82) 0%, rgba(58,17,33,0.72) 55%, rgba(64,19,37,0.6) 100%),
-      url('assets/payel-perform-bg-2.jpg') center 35% / cover no-repeat;
-  }
-  .follow .section-head h2{color:var(--ivory);}
-  .follow .section-head .kicker{color:var(--brass-bright);}
-  .follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(243,234,217,0.15);border:1px solid rgba(243,234,217,0.15);}
+  .follow{background:var(--ivory-dim);}
+  .follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line-dark);border:1px solid var(--line-dark);}
   .follow-card{
-    background:rgba(27,23,18,0.55);backdrop-filter:blur(3px);
-    display:flex;align-items:center;gap:18px;
+    background:var(--ivory);display:flex;align-items:center;gap:18px;
     padding:30px 32px;transition:background .2s ease;
   }
-  .follow-card:hover{background:rgba(27,23,18,0.72);}
+  .follow-card:hover{background:var(--ivory-dim);}
   .follow-icon{
     width:52px;height:52px;border-radius:50%;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;color:var(--ivory);
   }
   .follow-icon.yt{background:#c4302b;}
   .follow-icon.ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
-  .follow-card h3{font-size:1.1rem;margin-bottom:4px;color:var(--ivory);}
-  .follow-card p{color:var(--ivory-dim);font-size:0.9rem;}
-  .follow-arrow{margin-left:auto;color:var(--brass-bright);font-size:1.2rem;flex-shrink:0;}
+  .follow-card h3{font-size:1.1rem;margin-bottom:4px;}
+  .follow-card p{color:#4a3f33;font-size:0.9rem;}
+  .follow-arrow{margin-left:auto;color:var(--brass);font-size:1.2rem;flex-shrink:0;}
 
   /* ---------- PERFORM (booking) ---------- */
   .perform{
